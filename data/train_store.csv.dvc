@@ -1,0 +1,4 @@
+outs:
+- md5: 4a677f0f7aacae8f649e4e5b0e881414
+  size: 74693269
+  path: train_store.csv
