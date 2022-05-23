@@ -27,18 +27,18 @@ class CleanData:
         return df[col]
     # Functions to fill missing columns with mean, median, mode
     #using median
-    def fix_missing_median(self,df):
-        df_Med=df['Column'].fillna(df['column'].median(), inplace=True)
+    def fix_missing_median(self,df, col):
+        df_Med=df[col].fillna(df[col].median(), inplace=True)
         return df_Med
   
     # Using mean
-    def fix_missing_mean(self,df):
-        df_mean=df['column'].fillna(int(df['column'].mean()), inplace=True)
+    def fix_missing_mean(self,df, col):
+        df_mean=df[col].fillna(int(df[col].mean()), inplace=True)
         return df_mean
   
     # Using mode
-    def fix_missing_mode(self,df):
-        df_mode=df['column'].fillna(int(df['Salary'].mode()), inplace=True)
+    def fix_missing_mode(self,df, col):
+        df_mode=df[col].fillna(int(df[col].mode()), inplace=True)
         return df_mode
     # By Interpolation
     def fix_missing_interpolation_fffil(self,df):
