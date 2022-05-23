@@ -48,3 +48,16 @@ class CleanData:
         df_clean = df_dropped.interpolate(method='bfill')
         return df_clean
 
+    
+    def detect_outliers_zscore(data):
+        outliers = []
+        thres = 3
+        mean = np.mean(data)
+        std = np.std(data)
+        # print(mean, std)
+        for i in data:
+            z_score = (i-mean)/std
+            if (np.abs(z_score) > thres):
+                outliers.append(i)
+        return outliers# Driver code
+
