@@ -95,3 +95,19 @@ class Preprocess:
         # Merge all data frames
         label_encoded_columns = pd.concat(label_encoded_columns, axis=1)
         return label_encoded_columns
+
+    def convert_bool(self, df, col):
+        """convert boolean to numeric"""
+        for i in range(len(col)):
+            df[col[i]] = df[col[i]].replace({True: 1, False: 0})
+        return df
+
+    def convert_onehot(self, df, col):
+        col = pd.get_dummies(df[col])
+        return col
+
+    def std_scale(self, df, col):
+        std_scaler = StandardScaler()
+        df_scaled = std_scaler.fit_transform(df)
+        df_scaled = pd.DataFrame(df_scaled)
+        return df_scaled
