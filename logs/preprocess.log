@@ -1,0 +1,72 @@
+05-24-2022 00:15:20 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-24-2022 00:15:45 : INFO : logger : Plotting a histogram
+05-24-2022 00:16:39 : INFO : logger : Plotting a histogram
+05-24-2022 00:16:48 : INFO : logger : Successfully Instantiated ml Class Object
+05-24-2022 00:16:48 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+05-24-2022 00:17:05 : INFO : logger : Plotting a histogram
+05-24-2022 00:17:53 : INFO : logger : Plotting a histogram
+05-24-2022 00:55:34 : INFO : logger : Plotting a scatter plot
+05-24-2022 06:31:21 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-24-2022 08:22:40 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-24-2022 08:24:35 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:24:35 : ERROR : logger : Failed to get Numerical Columns from Dataframe
+Traceback (most recent call last):
+  File "C:\Users\sam\Desktop\pharma\scripts\preprocess.py", line 31, in get_numerical_columns
+    num_col.remove('date')
+ValueError: list.remove(x): x not in list
+05-24-2022 08:24:50 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:24:50 : ERROR : logger : Failed to get Numerical Columns from Dataframe
+Traceback (most recent call last):
+  File "C:\Users\sam\Desktop\pharma\scripts\preprocess.py", line 31, in get_numerical_columns
+    num_col.remove('date')
+ValueError: list.remove(x): x not in list
+05-24-2022 08:25:53 : INFO : logger : Successfully Instantiated ml Class Object
+05-24-2022 08:25:53 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+05-24-2022 08:25:53 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-24-2022 08:25:53 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-24-2022 08:26:03 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:26:03 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:26:03 : ERROR : logger : Failed to get Numerical Columns from Dataframe
+Traceback (most recent call last):
+  File "C:\Users\sam\Desktop\pharma\scripts\preprocess.py", line 31, in get_numerical_columns
+    # num_col.remove('date')
+ValueError: list.remove(x): x not in list
+05-24-2022 08:26:03 : ERROR : logger : Failed to get Numerical Columns from Dataframe
+Traceback (most recent call last):
+  File "C:\Users\sam\Desktop\pharma\scripts\preprocess.py", line 31, in get_numerical_columns
+    # num_col.remove('date')
+ValueError: list.remove(x): x not in list
+05-24-2022 08:26:14 : INFO : logger : Successfully Instantiated ml Class Object
+05-24-2022 08:26:14 : INFO : logger : Successfully Instantiated ml Class Object
+05-24-2022 08:26:14 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+05-24-2022 08:26:14 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+05-24-2022 08:26:14 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-24-2022 08:26:14 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-24-2022 08:26:14 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-24-2022 08:26:18 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:26:18 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:26:18 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:26:18 : ERROR : logger : Failed to get Numerical Columns from Dataframe
+Traceback (most recent call last):
+  File "C:\Users\sam\Desktop\pharma\scripts\preprocess.py", line 31, in get_numerical_columns
+    # num_col.remove('date')
+ValueError: list.remove(x): x not in list
+05-24-2022 08:26:18 : ERROR : logger : Failed to get Numerical Columns from Dataframe
+Traceback (most recent call last):
+  File "C:\Users\sam\Desktop\pharma\scripts\preprocess.py", line 31, in get_numerical_columns
+    # num_col.remove('date')
+ValueError: list.remove(x): x not in list
+05-24-2022 08:26:18 : ERROR : logger : Failed to get Numerical Columns from Dataframe
+Traceback (most recent call last):
+  File "C:\Users\sam\Desktop\pharma\scripts\preprocess.py", line 31, in get_numerical_columns
+    # num_col.remove('date')
+ValueError: list.remove(x): x not in list
+05-24-2022 08:36:05 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-24-2022 08:36:12 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:36:20 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:39:34 : INFO : logger : Getting Numerical Columns from Dataframe
+05-24-2022 08:39:39 : INFO : logger : Getting Categorical Columns from Dataframe
+05-24-2022 08:39:43 : INFO : logger : Getting Categorical Columns from Dataframe
+05-24-2022 08:39:56 : INFO : logger : Getting Categorical Columns from Dataframe
+05-24-2022 08:40:00 : INFO : logger : Getting Missing Values from Dataframe
+05-24-2022 13:00:08 : INFO : logger : Successfully Instantiated preprocess Class Object
