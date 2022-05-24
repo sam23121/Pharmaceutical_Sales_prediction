@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-# from logger import Logger
+import sys
+from logger import Logger
 from sklearn.model_selection import cross_validate
 
 
@@ -12,12 +13,12 @@ class Ml:
         """Initilize class."""
         try:
             pass
-            # self.logger = Logger("ml.log").get_app_logger()
-            # self.logger.info(
-            # 'Successfully Instantiated ml Class Object')
+            self.logger = Logger("ml.log").get_app_logger()
+            self.logger.info(
+            'Successfully Instantiated ml Class Object')
         except Exception:
-            # self.logger.exception(
-            # 'Failed to Instantiate Preprocessing Class Object')
+            self.logger.exception(
+            'Failed to Instantiate Preprocessing Class Object')
             sys.exit(1)
 
     def cross_validation(self, model, _X, _y, _cv=5):
