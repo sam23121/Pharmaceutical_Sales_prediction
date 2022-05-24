@@ -28,7 +28,7 @@ class Preprocess:
             self.logger.info('Getting Numerical Columns from Dataframe')
             num_col = df.select_dtypes(
                 exclude="object").columns.tolist()
-            num_col.remove('date')
+            # num_col.remove('date')
             return num_col
         except Exception:
             self.logger.exception(
@@ -39,8 +39,8 @@ class Preprocess:
         """Get categorical columns from dataframe."""
         try:
             self.logger.info('Getting Categorical Columns from Dataframe')
-            return df.select_dtypes(
-                include="object").columns.tolist()
+            num_col = df.select_dtypes(include="object").columns.tolist()
+            return num_col
         except Exception:
             self.logger.exception(
                 'Failed to get Categorical Columns from Dataframe')
