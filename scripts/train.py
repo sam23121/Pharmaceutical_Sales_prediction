@@ -1,4 +1,3 @@
-import imp
 import os
 import warnings
 import sys
@@ -63,7 +62,7 @@ def eval_metrics(actual, pred):
 
 def pre_processing(df):
     #droping the auction id since it has no value for the train
-    df.drop('Unnamed: 0', axis=1, inplace=True) 
+    # df.drop('Unnamed: 0', axis=1, inplace=True) 
 
     # numr_col = pre.get_numerical_columns(df) 
     # categorical_column = pre.get_categorical_columns(df)
