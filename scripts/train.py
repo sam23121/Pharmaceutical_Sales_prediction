@@ -80,7 +80,7 @@ def pre_processing(df):
     # df[to_label_encoding] = df[to_label_encoding].apply(le.fit_transform)
 
     # df.drop(['date', 'browser'], axis=1, inplace=True)
-    df.drop(['StateHoliday', 'StoreType', 'Assortment', 'PromoInterval'], axis=1, inplace=True)
+    df.drop(['StoreType', 'Assortment', 'PromoInterval'], axis=1, inplace=True)
     X = df.drop(['Customers', 'Sales', 'SalePerCustomer'], axis = 1) 
     col_name = X.columns.tolist()
     y=np.log(df.Sales)
