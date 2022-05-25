@@ -5,6 +5,8 @@ import seaborn as sns
 import sys
 from logger import Logger
 from sklearn.model_selection import cross_validate
+from sklearn.ensemble import RandomForestRegressor
+
 
 
 class Ml:
@@ -79,6 +81,11 @@ class Ml:
                 }
 
     # Grouped Bar Chart for both training and validation data
+
+    def rfc():
+        regressor = RandomForestRegressor(n_estimators = 10, max_depth=5)
+        return regressor
+
 
     def plot_result(self, x_label, y_label, plot_title, train_data, val_data, image_name):
         """Plot a grouped bar chart showing the training and validation results of the ML model in each fold after applying K-fold cross-validation.
