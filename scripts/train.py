@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join('../scripts')))
 
 import pandas as pd
 import numpy as np
-import seaborn as sns
+# import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from sklearn.model_selection import train_test_split
@@ -38,19 +38,20 @@ import mlflow
 import mlflow.sklearn
 import pickle
 
-from logging import Logger
+from logger import Logger
+import logging
 from ml import Ml
 from preprocess import Preprocess
-from plot import Plot
+# from plot import Plot
 
 
-logging.basicConfig(level=logging.WARN)
-logger = logging.getLogger(__name__)
+# logging.basicConfig(level=logging.WARN)
+# logger = logging.getLogger(__name__)
 
 # from ml import ML
-ml = Ml()
-pre = Preprocess()
-pt = Plot()
+# ml = Ml()
+# pre = Preprocess()
+# pt = Plot()
 
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
@@ -62,8 +63,10 @@ def pre_processing(df):
     #droping the auction id since it has no value for the train
     df.drop('Unnamed: 0', axis=1, inplace=True) 
 
-    numr_col = pre.get_numerical_columns(df) 
-    categorical_column = pre.get_categorical_columns(df)
+    # numr_col = pre.get_numerical_columns(df) 
+    # categorical_column = pre.get_categorical_columns(df)
+    numerical_column = df.select_dtypes(exclude="object").columns.tolist()
+    categorical_column = df.select_dtypes(include="object").columns.tolist()
 
     # Get column names have less than 10 more than 2 unique values
     to_one_hot_encoding = [col for col in categorical_column if df[col].nunique() <= 10 and df[col].nunique() > 2]
@@ -101,15 +104,15 @@ if __name__ == "__main__":
     
     axis_fs = 18 #fontsize
     title_fs = 22 #fontsize
-    sns.set(style="whitegrid")
+    # sns.set(style="whitegrid")
     
-    y_train_test, y_train, X_train_test, X_train = train_test_split(y, X, test_size=0.80, shuffle=False)
+    y_test, y_train, X_test, X_train = train_test_split(y, X, test_size=0.80, shuffle=False)
     # print ("Training and testing split was successful.")
 
     with mlflow.start_run():
 
         # creating a pipeline
-        model_pipeline = Pipeline(steps=[('scaler', StandardScaler()), ('model', ml.rfc())])
+        model_pipeline = Pipeline(steps=[('scaler', StandardScaler()), ('model', RandomForestRegressor(n_estimators = 10, max_depth=5))])
         model_pipeline.fit(X_train, y_train)
         # lr = LogisticRegression()
         # lr.fit(X_train, y_train)
@@ -118,11 +121,11 @@ if __name__ == "__main__":
 
         
 
-        predicted_qualities = model_pipeline.predict(X_train_test)
+        predicted_qualities = model_pipeline.predict(X_test)
         # acc_sco = accuracy_score(y_test, predicted_qualities)
 
 
-        (rmse, mae, mse) = eval_metrics(y_train_test, predicted_qualities)
+        (rmse, mae, mse) = eval_metrics(y_test, predicted_qualities)
 
         print("  RMSE: %s" % rmse)
         print("  MAE: %s" % mae)
@@ -156,23 +159,23 @@ if __name__ == "__main__":
 
         print("Model saved in run %s" % mlflow.active_run().info.run_uuid)
 
-        y_pred = model_pipeline.predict(X_test) + np.random.normal(0,0.25,len(y_test))
-        y_jitter = y_test + np.random.normal(0,0.25,len(y_test))
-        res_df = pd.DataFrame(list(zip(y_jitter,y_pred)), columns = ["true","pred"])
+        # y_pred = model_pipeline.predict(X_test) + np.random.normal(0,0.25,len(y_test))
+        # y_jitter = y_test + np.random.normal(0,0.25,len(y_test))
+        # res_df = pd.DataFrame(list(zip(y_jitter,y_pred)), columns = ["true","pred"])
 
-        ax = sns.scatterplot(x="true", y="pred",data=res_df)
-        ax.set_aspect('equal')
-        ax.set_xlabel('True predictions',fontsize = axis_fs) 
-        ax.set_ylabel('Predicted predictions', fontsize = axis_fs)#ylabel
-        ax.set_title('Residuals', fontsize = title_fs)
+        # ax = sns.scatterplot(x="true", y="pred",data=res_df)
+        # ax.set_aspect('equal')
+        # ax.set_xlabel('True predictions',fontsize = axis_fs) 
+        # ax.set_ylabel('Predicted predictions', fontsize = axis_fs)#ylabel
+        # ax.set_title('Residuals', fontsize = title_fs)
 
-        # Make it pretty- square aspect ratio
-        ax.plot([1, 10], [1, 10], 'black', linewidth=1)
-        plt.ylim((2.5,8.5))
-        plt.xlim((2.5,8.5))
+        # # Make it pretty- square aspect ratio
+        # ax.plot([1, 10], [1, 10], 'black', linewidth=1)
+        # plt.ylim((2.5,8.5))
+        # plt.xlim((2.5,8.5))
 
-        plt.tight_layout()
-        plt.savefig("residuals_for_logesticregression.png",dpi=120)
+        # plt.tight_layout()
+        # plt.savefig("residuals_for_logesticregression.png",dpi=120)
 
     # with mlflow.start_run():
     #     model_pipeline = Pipeline(steps=[('scaler', MinMaxScaler()), ('model', DecisionTreeClassifier(criterion = 'entropy'))])

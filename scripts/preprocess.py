@@ -3,7 +3,7 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
+# import seaborn as sns
 from logger import Logger
 from sklearn.model_selection import cross_validate
 from sklearn.preprocessing import LabelEncoder

@@ -1,0 +1,3 @@
+Root mean squared error: 0.4%
+mean apsolute error: 0.3%
+mean squared error: 0.1%
