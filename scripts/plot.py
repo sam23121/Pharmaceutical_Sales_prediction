@@ -30,8 +30,8 @@ class Plot:
         # plt.figure(figsize=(15, 10))
         # fig, ax = plt.subplots(1, figsize=(12, 7))
         sns.displot(data=df, x=column, color=color,
-                    kde=True, height=7, aspect=2)
-        plt.title(f'Distribution of {column}', size=20, fontweight='bold')
+                    kde=True, height=3, aspect=2)
+        plt.title(f'Distribution of {column}', size=10, fontweight='bold')
         self.logger.info(
             'Plotting a histogram')
         plt.show()
