@@ -13,6 +13,7 @@ jobs:
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
+          dvc pull train_store.csv
           python scripts/train.py
       - name: Write CML report
         env:
