@@ -90,7 +90,14 @@ def pre_processing(df):
 
     return X, y, col_name
 
-
+# def feature_importance:
+#     importance = model_pipeline.named_steps["model"].feature_importances_
+#     # summarize feature importance
+#     for i,v in enumerate(importance):
+# 	print(col_name[i], ', Score: %.5f' % (v))
+#     # plot feature importance
+#     plt.bar([x for x in range(len(importance))], importance)
+#     plt.show()
 
 
 if __name__ == "__main__":

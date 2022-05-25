@@ -103,3 +103,25 @@ ValueError: list.remove(x): x not in list
 05-24-2022 13:00:08 : INFO : logger : Successfully Instantiated ml Class Object
 05-24-2022 13:00:08 : INFO : logger : Successfully Instantiated Preprocessing Class Object
 05-24-2022 13:00:08 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-25-2022 00:35:31 : INFO : logger : Successfully Instantiated ml Class Object
+05-25-2022 00:35:31 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+05-25-2022 00:35:31 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-25-2022 00:36:14 : INFO : logger : Getting Numerical Columns from Dataframe
+05-25-2022 00:36:16 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 00:36:18 : INFO : logger : Getting Missing Values from Dataframe
+05-25-2022 00:44:33 : INFO : logger : Getting Missing Values from Dataframe
+05-25-2022 07:24:58 : INFO : logger : Successfully Instantiated ml Class Object
+05-25-2022 07:24:58 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+05-25-2022 07:24:59 : INFO : logger : Successfully Instantiated preprocess Class Object
+05-25-2022 07:25:29 : INFO : logger : Plotting a histogram
+05-25-2022 07:43:41 : INFO : logger : Plotting a histogram
+05-25-2022 09:17:47 : INFO : logger : Plotting a bar chart
+05-25-2022 09:17:48 : INFO : logger : Plotting a bar chart
+05-25-2022 09:19:53 : INFO : logger : Plotting a bar chart
+05-25-2022 09:19:53 : INFO : logger : Plotting a bar chart
+05-25-2022 09:22:45 : INFO : logger : Plotting a bar chart
+05-25-2022 09:22:46 : INFO : logger : Plotting a bar chart
+05-25-2022 09:23:19 : INFO : logger : Plotting a bar chart
+05-25-2022 09:23:20 : INFO : logger : Plotting a bar chart
+05-25-2022 09:37:36 : INFO : logger : Plotting a heatmap for the dataset: 
+05-25-2022 09:38:16 : INFO : logger : Plotting a heatmap for the dataset: 
