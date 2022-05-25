@@ -125,3 +125,9 @@ ValueError: list.remove(x): x not in list
 05-25-2022 09:23:20 : INFO : logger : Plotting a bar chart
 05-25-2022 09:37:36 : INFO : logger : Plotting a heatmap for the dataset: 
 05-25-2022 09:38:16 : INFO : logger : Plotting a heatmap for the dataset: 
+05-25-2022 11:14:20 : INFO : logger : Getting Numerical Columns from Dataframe
+05-25-2022 11:14:29 : INFO : logger : Getting Numerical Columns from Dataframe
+05-25-2022 11:15:10 : INFO : logger : Getting Numerical Columns from Dataframe
+05-25-2022 11:16:03 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 11:24:13 : INFO : logger : Getting Numerical Columns from Dataframe
+05-25-2022 11:24:28 : INFO : logger : Getting Numerical Columns from Dataframe
