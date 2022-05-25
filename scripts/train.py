@@ -81,7 +81,7 @@ def pre_processing(df):
 
     # df.drop(['date', 'browser'], axis=1, inplace=True)
     df.drop(categorical_column, axis=1, inplace=True)
-    X = df.drop(['Customers', 'Sales', 'SalePerCustomer'], axis = 1) 
+    X = df.drop(['Customers', 'Sales'], axis = 1) 
     col_name = X.columns.tolist()
     y=np.log(df.Sales)
 
