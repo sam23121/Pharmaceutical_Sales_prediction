@@ -106,7 +106,7 @@ if __name__ == "__main__":
     # np.random.seed(40)
 
     # pd.set_option('max_column', None)
-    df = pd.read_csv( 'data/train_store.csv.dvc', engine = 'python')
+    df = pd.read_csv( r'C:\Users\sam\Desktop\pharma\data\train_store.csv', engine = 'python')
 
     X, y, col_name = pre_processing(df)
     
@@ -131,6 +131,15 @@ if __name__ == "__main__":
 
         predicted_qualities = model_pipeline.predict(X_test)
         # acc_sco = accuracy_score(y_test, predicted_qualities)
+        # date = datetime.now()
+        # dt_string = date.strftime("%d-%m-%Y-%H-%M-%S")
+        # with open("metrics.txt", 'w') as db:
+        #     db.write
+        #     pickle.dump(model_pipeline, open('../models/{}.pkl'.format(dt_string), 'wb'))
+
+        # date = datetime.now()
+        # dt_string = str(date.strftime("%d-%m-%Y-%H-%M-%S"))
+        # pickle.dump(model_pipeline, open('{}.pkl'.format(dt_string), 'w'))
 
 
         (rmse, mae, mse) = eval_metrics(y_test, predicted_qualities)
@@ -167,6 +176,3 @@ if __name__ == "__main__":
 
         print("Model saved in run %s" % mlflow.active_run().info.run_uuid)
 
-        date = datetime.now()
-        dt_string = date.strftime("%d-%m-%Y-%H-%M-%S")
-        pickle.dump(model_pipeline, open('../models/{}.pkl'.format(dt_string), 'wb'))
