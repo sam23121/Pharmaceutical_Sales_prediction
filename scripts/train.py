@@ -28,18 +28,13 @@ from sklearn.model_selection import train_test_split
 
 
 # To Train our data
-# from xgboost import XGBClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import LeaveOneOut
 from sklearn.model_selection import cross_val_score
 import mlflow
 import mlflow.sklearn
 import pickle
 
-from logger import Logger
+from log import Logger
 import logging
 from ml import Ml
 from preprocess import Preprocess
@@ -50,8 +45,8 @@ from preprocess import Preprocess
 # logger = logging.getLogger(__name__)
 
 # from ml import ML
-# ml = Ml()
-# pre = Preprocess()
+ml = Ml()
+pre = Preprocess()
 # pt = Plot()
 
 def eval_metrics(actual, pred):
@@ -62,7 +57,10 @@ def eval_metrics(actual, pred):
 
 def pre_processing(df):
     #droping the auction id since it has no value for the train
-    # df.drop('Unnamed: 0', axis=1, inplace=True) 
+    try:
+        df.drop('Unnamed: 0', axis=1, inplace=True) 
+    except:
+        pass
 
     # numr_col = pre.get_numerical_columns(df) 
     # categorical_column = pre.get_categorical_columns(df)
@@ -81,7 +79,7 @@ def pre_processing(df):
 
     # df.drop(['date', 'browser'], axis=1, inplace=True)
     df.drop(categorical_column, axis=1, inplace=True)
-    X = df.drop(['Customers', 'Sales'], axis = 1) 
+    X = df.drop(['Customers', 'Sales', 'SalePerCustomer'], axis = 1) 
     col_name = X.columns.tolist()
     y=np.log(df.Sales)
 
@@ -106,7 +104,7 @@ if __name__ == "__main__":
     # np.random.seed(40)
 
     # pd.set_option('max_column', None)
-    df = pd.read_csv( 'data/train_store.csv', engine = 'python')
+    df = pd.read_csv( '../data/train_store.csv', engine = 'python')
 
     X, y, col_name = pre_processing(df)
     
@@ -120,14 +118,8 @@ if __name__ == "__main__":
     with mlflow.start_run():
 
         # creating a pipeline
-        model_pipeline = Pipeline(steps=[('scaler', StandardScaler()), ('model', RandomForestRegressor(n_estimators = 10, max_depth=5))])
-        model_pipeline.fit(X_train, y_train)
-        # lr = LogisticRegression()
-        # lr.fit(X_train, y_train)
-        # train_score = model_pipeline.score(X_train, y_train)
-        # test_score = model_pipeline.score(X_train_test, y_train_test)
-
-        
+        model_pipeline = Pipeline(steps=[('scaler', StandardScaler()), ('model',ml.rfc())])
+        model_pipeline.fit(X_train, y_train)    
 
         predicted_qualities = model_pipeline.predict(X_test)
         # acc_sco = accuracy_score(y_test, predicted_qualities)
@@ -153,9 +145,6 @@ if __name__ == "__main__":
             outfile.write("mean squared error: %2.1f%%\n" % mse)
 
 
-        # mlflow.log_metric("train_score", train_score)
-        # mlflow.log_metric("acc_sco", train_score)
-        # mlflow.log_metric("test_score", test_score)
         mlflow.log_metric("rmse", rmse)
         mlflow.log_metric("mse", mse)
         mlflow.log_metric("mae", mae)

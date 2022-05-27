@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 # import seaborn as sns
 import sys
-from logger import Logger
+from log import Logger
 from sklearn.model_selection import cross_validate
 from sklearn.ensemble import RandomForestRegressor
 
@@ -82,9 +82,16 @@ class Ml:
 
     # Grouped Bar Chart for both training and validation data
 
-    def rfc():
-        regressor = RandomForestRegressor(n_estimators = 10, max_depth=5)
-        return regressor
+    def rfc(self):
+        try:
+            regressor = RandomForestRegressor(n_estimators = 10, max_depth=5)
+            self.logger.info(
+                'Successfully created a Random forest regressor model')
+            return regressor
+        except Exception:
+            self.logger.exception(
+                'Failed to create a random forest regressor model ')
+            sys.exit(1)
 
 
     def plot_result(self, x_label, y_label, plot_title, train_data, val_data, image_name):

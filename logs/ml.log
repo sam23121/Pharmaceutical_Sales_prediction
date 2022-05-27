@@ -195,3 +195,20 @@ ValueError: list.remove(x): x not in list
 05-25-2022 14:04:34 : INFO : logger : Getting Categorical Columns from Dataframe
 05-25-2022 14:04:44 : INFO : logger : Getting Categorical Columns from Dataframe
 05-25-2022 14:04:44 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 15:17:23 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 15:17:23 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 16:03:28 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 16:03:28 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 16:04:50 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 16:04:50 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 16:07:10 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 16:07:10 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 16:08:59 : INFO : logger : Getting Categorical Columns from Dataframe
+05-25-2022 16:08:59 : INFO : logger : Getting Categorical Columns from Dataframe
+05-26-2022 03:05:47 : INFO : log : Successfully Instantiated ml Class Object
+05-26-2022 03:05:47 : INFO : log : Successfully Instantiated preprocess Class Object
+05-26-2022 03:15:08 : INFO : log : Successfully Instantiated ml Class Object
+05-26-2022 03:15:08 : INFO : log : Successfully Instantiated preprocess Class Object
+05-26-2022 04:53:42 : INFO : log : Successfully Instantiated ml Class Object
+05-26-2022 04:53:42 : INFO : log : Successfully Instantiated preprocess Class Object
+05-26-2022 04:55:15 : INFO : log : Successfully created a Random forest regressor model
