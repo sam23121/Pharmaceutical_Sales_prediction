@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 from matplotlib import ticker
-from statsmodels.tsa.stattools import adfuller, acf, pacf
+# from statsmodels.tsa.stattools import adfuller, acf, pacf
 from sklearn.preprocessing import MinMaxScaler,StandardScaler
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
@@ -21,8 +21,8 @@ import mlflow.keras
 
 mlflow.keras.autolog()
 
-train_store = pd.read_csv("train_store.csv")
-test_store = pd.read_csv("test_store.csv")
+train_store = pd.read_csv(r"C:\Users\sam\Desktop\pharma\data\train_store.csv")
+# test_store = pd.read_csv("C:\Users\sam\Desktop\pharma\data\train_store.csv")
 
 train_store['date'] = pd.to_datetime(train_store[['Day', 'Month', 'Year']], format='%Y%m%d')
 train_store['date'] = train_store.date.dt.strftime('%Y-%m-%d')
@@ -126,7 +126,7 @@ model.add(LSTM(50))
 model.add(Dense(1))
 model.compile(loss='mae', optimizer='adam')
 
-history = model.fit(train_X, train_y, epochs=50, batch_size=64, validation_data=(test_X, test_y), verbose=2, shuffle=False)
+history = model.fit(train_X, train_y, epochs=10, batch_size=64, validation_data=(test_X, test_y), verbose=2, shuffle=False)
 
 
 date = datetime.now()
