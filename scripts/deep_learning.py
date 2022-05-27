@@ -128,24 +128,29 @@ model.compile(loss='mae', optimizer='adam')
 
 history = model.fit(train_X, train_y, epochs=10, batch_size=64, validation_data=(test_X, test_y), verbose=2, shuffle=False)
 
+try:
+    date = datetime.now()
+    dt_string = str(date.strftime("%d-%m-%Y-%H-%M-%S"))
+    model.save('model {}.h5'.format(dt_string))
+    tf.keras.models.save_model(model, '{}.pkl'.format(dt_string))
+except:
+    pass
 
-date = datetime.now()
-dt_string = str(date.strftime("%d-%m-%Y-%H-%M-%S"))
-pickle.dump(model, open('../models/{}.pkl'.format(dt_string), 'wb'))
-
-
-# make a prediction
-yhat = model.predict(test_X)
-test_X = test_X.reshape((test_X.shape[0], test_X.shape[2]))
-# invert scaling for forecast
-inv_yhat = concatenate((yhat, test_X[:, 1:]), axis=1)
-inv_yhat = scaler.inverse_transform(inv_yhat)
-inv_yhat = inv_yhat[:,0]
-# invert scaling for actual
-test_y = test_y.reshape((len(test_y), 1))
-inv_y = concatenate((test_y, test_X[:, 1:]), axis=1)
-inv_y = scaler.inverse_transform(inv_y)
-inv_y = inv_y[:,0]
-# calculate RMSE
-rmse = sqrt(mean_squared_error(inv_y, inv_yhat))
-print('Test RMSE: %.3f' % rmse)
+try:
+    # make a prediction
+    yhat = model.predict(test_X)
+    test_X = test_X.reshape((test_X.shape[0], test_X.shape[2]))
+    # invert scaling for forecast
+    inv_yhat = concatenate((yhat, test_X[:, 1:]), axis=1)
+    inv_yhat = scaler.inverse_transform(inv_yhat)
+    inv_yhat = inv_yhat[:,0]
+    # invert scaling for actual
+    test_y = test_y.reshape((len(test_y), 1))
+    inv_y = concatenate((test_y, test_X[:, 1:]), axis=1)
+    inv_y = scaler.inverse_transform(inv_y)
+    inv_y = inv_y[:,0]
+    # calculate RMSE
+    rmse = sqrt(mean_squared_error(inv_y, inv_yhat))
+    print('Test RMSE: %.3f' % rmse)
+except:
+    pass
