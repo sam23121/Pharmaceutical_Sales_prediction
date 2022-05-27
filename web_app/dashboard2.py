@@ -9,8 +9,9 @@ import numpy as np
  
 @st.cache
 def get_data():
-    train_store['date'] = pd.to_datetime(train_store[['Day', 'Month', 'Year']], format='%Y%m%d')
-    return pd.read_csv( '../data/train_store.csv', engine = 'python')
+    df = pd.read_csv( '../data/train_store.csv', engine = 'python')
+    df['date'] = pd.to_datetime(df[['Day', 'Month', 'Year']], format='%Y%m%d')
+    return df
 
 df = get_data()
 window_selection_c = st.sidebar.container() # create an empty container in the sidebar
@@ -20,9 +21,9 @@ sub_columns = window_selection_c.columns(2) #Split the container into two column
 
 # Years = np.array([ 2015, 2014, 2013])  # TODO : include all stocks
 years = window_selection_c.selectbox("select years", df['Year'].unique())
-years = window_selection_c.selectbox("select years", df['Day'].unique())
-years = window_selection_c.selectbox("select years", df['StateHoliday'].unique())
-years = window_selection_c.selectbox("select years", df['Year'].unique())
+day = window_selection_c.selectbox("select years", df['Day'].unique())
+state_holiday = window_selection_c.selectbox("select years", df['StateHoliday'].unique())
+promo = window_selection_c.selectbox("select years", df['Promo'].unique())
 
 store = window_selection_c.selectbox("select stores", df['Store'].unique())
 

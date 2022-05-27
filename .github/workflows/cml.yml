@@ -19,7 +19,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Post reports as comments in GitHub PRs
-          echo '# model metrics logesticregression' > report.md
+          echo '# model metrics RandomForest' > report.md
           cat metrics.txt >> report.md
           # echo "## Data viz" >> report.md
           # cml-publish residuals_for_logesticregression.png --md >> report.md
