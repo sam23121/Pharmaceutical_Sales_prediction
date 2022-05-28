@@ -115,7 +115,7 @@ X, y, col_name = pre_processing(df)
 y_test, y_train, X_test, X_train = train_test_split(y, X, test_size=0.75, shuffle=False)
 model_pipeline = Pipeline(steps=[('scaler', StandardScaler()), ('model',RandomForestRegressor(n_estimators = 10, max_depth=5))])
 model_pipeline.fit(X_train, y_train)
-model_pipeline.predict(test)
+# model_pipeline.predict(test)
 # makes = df['Store']
 # years = df['Year']
 # days = df['Day']

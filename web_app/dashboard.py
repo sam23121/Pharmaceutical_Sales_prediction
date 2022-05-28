@@ -14,7 +14,7 @@ st.title('Time Series Forecasting Using Streamlit')
 
 @st.cache
 def get_data():
-    df = pd.read_csv( '../data/train_store.csv', engine = 'python')
+    df = pd.read_csv( 'train_store.csv', engine = 'python')
     df['date'] = pd.to_datetime(df[['Day', 'Month', 'Year']], format='%Y-%m-%d')
     df2 = pd.DataFrame(columns = ['ds', 'y'])
     df2['ds'] = df['date']
