@@ -1,13 +1,13 @@
 # import the child scripts
 import streamlit as st
-# import awesome_streamlit as ast
+import awesome_streamlit as ast
 import home
 import data 
 import plots
 import pred
 import dashboard
 
-# ast.core.services.other.set_logging_format()
+ast.core.services.other.set_logging_format()
 
 # create the pages
 PAGES = {
