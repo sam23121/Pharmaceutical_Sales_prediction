@@ -7,7 +7,7 @@ import plots
 import pred
 import dashboard
 
-ast.core.services.other.set_logging_format()
+# ast.core.services.other.set_logging_format()
 
 # create the pages
 PAGES = {
