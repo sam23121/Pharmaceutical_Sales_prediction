@@ -12,8 +12,8 @@ requirements = ['pandas>=1.1.0', 'numpy>=1.19.0', ]
 test_requirements = ['pytest>=3', ]
 
 setup(
-    author="10 Academy",
-    email="train@10academy.org",
+    author="Samuel Alene",
+    email="smlalene@gmail.com",
     python_requires='>=3.6',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -33,7 +33,7 @@ setup(
     packages=find_packages(include=['scripts', 'scripts.*']),
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/10xac/PythonPackageStructure',
+    url='https://github.com/sam23121/Pharmaceutical_Sales_prediction',
     version='0.1.0',
     zip_safe=False,
 )
