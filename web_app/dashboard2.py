@@ -22,7 +22,7 @@ from sklearn.model_selection import train_test_split
  
 @st.cache
 def get_data():
-    df = pd.read_csv( '../data/train_store.csv', engine = 'python')
+    df = pd.read_csv( 'train.csv', engine = 'python')
     df['date'] = pd.to_datetime(df[['Day', 'Month', 'Year']], format='%Y%m%d')
     return df
 
