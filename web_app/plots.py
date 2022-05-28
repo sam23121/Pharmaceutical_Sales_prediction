@@ -3,15 +3,17 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import os
 
-
+path = os.path.dirname(__file__)
+my_file = path+'/train.csv'
 def write():
     with st.spinner("Loading Plots ..."):
         st.title('Data Visualisation')
 
         # read the datasets
         # na_value=['',' ','nan','Nan','NaN','na', '<Na>']
-        train = pd.read_csv("../web_app/train.csv", engine = 'python') #na_values=na_value)
+        train = pd.read_csv(my_file, engine = 'python') #na_values=na_value)
         store = pd.read_csv('./store.csv', engine = 'python') #na_values=na_value)
         full_train = pd.merge(left = train, right = store, how = 'inner', left_on = 'Store', right_on = 'Store')
         #st.sidebar.title("Gallery")
