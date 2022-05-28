@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import awesome_streamlit as ast
+# import awesome_streamlit as ast
 # from fbprophet import Prophet
 # from fbprophet.diagnostics import performance_metrics
 # from fbprophet.diagnostics import cross_validation
