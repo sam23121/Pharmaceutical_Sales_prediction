@@ -104,7 +104,7 @@ if __name__ == "__main__":
     # np.random.seed(40)
 
     # pd.set_option('max_column', None)
-    df = pd.read_csv( '../data/train_store.csv', engine = 'python')
+    df = pd.read_csv('../data/train_store.csv', engine = 'python')
 
     X, y, col_name = pre_processing(df)
     
