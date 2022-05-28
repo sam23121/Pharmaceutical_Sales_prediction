@@ -8,4 +8,4 @@ mlflow
 sklearn
 pickle-mixin
 streamlit
-awesome_streamlit
+awesome-streamlit
