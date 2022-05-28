@@ -14,7 +14,7 @@ st.title('Time Series Forecasting Using Streamlit')
 
 @st.cache
 def get_data():
-    df = pd.read_csv( 'train_store.csv', engine = 'python')
+    df = pd.read_csv( 'train.csv', engine = 'python')
     df['date'] = pd.to_datetime(df[['Day', 'Month', 'Year']], format='%Y-%m-%d')
     df2 = pd.DataFrame(columns = ['ds', 'y'])
     df2['ds'] = df['date']
@@ -39,8 +39,8 @@ promo = window_selection_c.selectbox("isPromo", df['Promo'].unique())
 
 
 
-infile = open('*.pkl','rb')
-model = pickle.load(infile)
+# infile = open('*.pkl','rb')
+# model = pickle.load(infile)
 # # define the model
 # model = Prophet()
 # # fit the model
