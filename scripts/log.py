@@ -19,7 +19,7 @@ class Logger:
 
         # define file handler and set formatter
 
-        file_handler = logging.FileHandler(f'../pharma/logs/{file_name}')
+        file_handler = logging.FileHandler(f'logs/{file_name}')
         formatter = logging.Formatter(
             '%(asctime)s : %(levelname)s : %(name)s : %(message)s', '%m-%d-%Y %H:%M:%S')
 

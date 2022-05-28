@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/sam/Desktop/pharma/mlruns/0/b7074df41f0a4066b2467cf8b0cf0f06/artifacts
+end_time: 1653758282122
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: b7074df41f0a4066b2467cf8b0cf0f06
+run_uuid: b7074df41f0a4066b2467cf8b0cf0f06
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1653758187073
+status: 3
+tags: []
+user_id: sam

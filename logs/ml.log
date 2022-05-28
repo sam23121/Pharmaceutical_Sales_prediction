@@ -212,3 +212,11 @@ ValueError: list.remove(x): x not in list
 05-26-2022 04:53:42 : INFO : log : Successfully Instantiated ml Class Object
 05-26-2022 04:53:42 : INFO : log : Successfully Instantiated preprocess Class Object
 05-26-2022 04:55:15 : INFO : log : Successfully created a Random forest regressor model
+05-28-2022 09:33:14 : INFO : log : Successfully Instantiated ml Class Object
+05-28-2022 09:33:14 : INFO : log : Successfully Instantiated preprocess Class Object
+05-28-2022 10:09:42 : INFO : log : Successfully Instantiated ml Class Object
+05-28-2022 10:09:42 : INFO : log : Successfully Instantiated preprocess Class Object
+05-28-2022 10:11:11 : INFO : log : Successfully created a Random forest regressor model
+05-28-2022 10:15:26 : INFO : log : Successfully Instantiated ml Class Object
+05-28-2022 10:15:26 : INFO : log : Successfully Instantiated preprocess Class Object
+05-28-2022 10:16:32 : INFO : log : Successfully created a Random forest regressor model

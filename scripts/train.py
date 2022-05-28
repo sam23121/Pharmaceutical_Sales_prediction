@@ -112,7 +112,7 @@ if __name__ == "__main__":
     title_fs = 22 #fontsize
     # sns.set(style="whitegrid")
     
-    y_test, y_train, X_test, X_train = train_test_split(y, X, test_size=0.80, shuffle=False)
+    y_test, y_train, X_test, X_train = train_test_split(y, X, test_size=0.75, shuffle=False)
     # print ("Training and testing split was successful.")
 
     with mlflow.start_run():
