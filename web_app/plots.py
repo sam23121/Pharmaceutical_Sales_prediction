@@ -11,8 +11,8 @@ def write():
 
         # read the datasets
         # na_value=['',' ','nan','Nan','NaN','na', '<Na>']
-        train = pd.read_csv('train.csv', engine = 'python') #na_values=na_value)
-        store = pd.read_csv('store.csv', engine = 'python') #na_values=na_value)
+        train = pd.read_csv('./train.csv', engine = 'python') #na_values=na_value)
+        store = pd.read_csv('./store.csv', engine = 'python') #na_values=na_value)
         full_train = pd.merge(left = train, right = store, how = 'inner', left_on = 'Store', right_on = 'Store')
         #st.sidebar.title("Gallery")
         st.sidebar.subheader("Choose Feature to plot")
